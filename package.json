@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "benchmark": "^2.1.4",
+    "lazy.js": "^0.5.1",
+    "lodash": "^4.17.21",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "rollup": "^2.70.2"
+  },
+  "name": "sequence",
+  "version": "1.0.0",
+  "main": "dist/main.esm.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "nyc --reporter=html --report-dir=./tests/coverage mocha tests/index.js",
+    "build": "npm run build-esm && npm run build-cjs",
+    "build-esm": "rollup src/index.js --file dist/main.esm.js --format esm",
+    "build-cjs": "rollup src/index.js --file dist/main.cjs.js --format cjs",
+    "benchmark": "node benchmark/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://e.coding.net/dawenci/sequence/sequence.git"
+  },
+  "author": "dawenci",
+  "license": "MIT",
+  "description": ""
+}
